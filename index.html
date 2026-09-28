@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Local Job & Skill Matching Portal</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f6f8;
+            color: #333;
+        }
+
+        /* Navigation */
+        nav {
+            background: #0d47a1;
+            text-align: center;
+            padding: 12px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header */
+       header {
+    background: linear-gradient(135deg, #1769aa, #0d47a1);
+    color: white !important;
+    text-align: center;
+    padding: 20px 10px;
+    height: auto !important;
+    min-height: 0 !important;
+}
+
+header h1 {
+    color: white !important;
+    margin: 0;
+    font-size: 30px;
+}
+
+header p {
+    color: white !important;
+    margin: 6px 0 0;
+}
+        header h1 {
+            margin: 0;
+            font-size: 30px;
+        }
+
+        header p {
+            margin: 7px 0 0;
+            font-size: 16px;
+        }
+
+        /* Small welcome section */
+        .welcome {
+            background: white;
+            max-width: 1000px;
+            margin: 18px auto;
+            padding: 18px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .welcome h2 {
+            color: #1769aa;
+            margin: 0 0 7px;
+        }
+
+        .welcome p {
+            margin: 0;
+            color: #555;
+        }
+
+        /* Main container */
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 20px auto;
+        }
+
+        /* Cards */
+        .card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #1769aa;
+            border-bottom: 2px solid #1769aa;
+            padding-bottom: 8px;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        button {
+            background: #1769aa;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            margin-top: 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #0d47a1;
+        }
+
+        /* Jobs */
+        .job {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 8px;
+            background: #fafafa;
+        }
+
+        .job h3 {
+            margin-top: 0;
+            color: #1769aa;
+        }
+
+        .job p {
+            margin: 7px 0;
+        }
+
+        .success {
+            color: green;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: #0d47a1;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+
+            nav a {
+                display: inline-block;
+                margin: 6px 8px;
+                font-size: 14px;
+            }
+
+            header h1 {
+                font-size: 24px;
+            }
+
+            .container {
+                width: 94%;
+            }
+
+            .card {
+                padding: 18px;
+            }
+
+            .welcome {
+                width: 94%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#search">Find Jobs</a>
+        <a href="#worker">Register</a>
+        <a href="#post">Post Job</a>
+        <a href="#about">About</a>
+    </nav>
+
+    <!-- Header -->
+    <header id="home">
+        <h1>Local Job & Skill Matching Portal</h1>
+        <p>Connecting Daily-Wage Workers with Local Jobs</p>
+    </header>
+
+    <!-- Welcome -->
+    <div class="welcome">
+        <h2>Find Local Work. Hire Local Skills.</h2>
+        <p>Connect skilled workers with nearby job opportunities.</p>
+    </div>
+
+    <div class="container">
+
+        <!-- Worker Registration -->
+        <section class="card" id="worker">
+
+            <h2>Worker Registration</h2>
+
+            <form id="workerForm">
+
+                <label for="workerName">Full Name</label>
+                <input type="text"
+                       id="workerName"
+                       placeholder="Enter your name"
+                       required>
+
+                <label for="phone">Phone Number</label>
+                <input type="tel"
+                       id="phone"
+                       placeholder="Enter phone number"
+                       required>
+
+                <label for="skill">Main Skill</label>
+                <select id="skill" required>
+
+                    <option value="">-- Select Skill --</option>
+                    <option value="Construction Worker">Construction Worker</option>
+                    <option value="Painter">Painter</option>
+                    <option value="Plumber">Plumber</option>
+                    <option value="Electrician">Electrician</option>
+                    <option value="Carpenter">Carpenter</option>
+                    <option value="Driver">Driver</option>
+                    <option value="Cleaner">Cleaner</option>
+                    <option value="Gardener">Gardener</option>
+                    <option value="Cook">Cook</option>
+                    <option value="Security Guard">Security Guard</option>
+                    <option value="Other">Other</option>
+
+                </select>
+
+                <label for="location">Location</label>
+                <input type="text"
+                       id="location"
+                       placeholder="Enter your area/city"
+                       required>
+
+                <label for="experience">Years of Experience</label>
+                <input type="number"
+                       id="experience"
+                       min="0"
+                       placeholder="Example: 3">
+
+                <button type="submit">
+                    Register as Worker
+                </button>
+
+                <p id="workerMessage"></p>
+
+            </form>
+
+        </section>
+
+
+        <!-- Find Jobs -->
+        <section class="card" id="search">
+
+            <h2>Find Local Jobs</h2>
+
+            <label for="searchSkill">Search by Skill</label>
+
+            <select id="searchSkill">
+
+                <option value="">All Skills</option>
+                <option value="Construction Worker">Construction Worker</option>
+                <option value="Painter">Painter</option>
+                <option value="Plumber">Plumber</option>
+                <option value="Electrician">Electrician</option>
+                <option value="Carpenter">Carpenter</option>
+                <option value="Driver">Driver</option>
+                <option value="Cleaner">Cleaner</option>
+                <option value="Gardener">Gardener</option>
+                <option value="Cook">Cook</option>
+                <option value="Security Guard">Security Guard</option>
+
+            </select>
+
+            <label for="searchLocation">Location</label>
+
+            <input type="text"
+                   id="searchLocation"
+                   placeholder="Example: Bengaluru">
+
+            <button type="button" onclick="searchJobs()">
+                Search Jobs
+            </button>
+
+            <div id="jobResults">
+
+                <div class="job"
+                     data-skill="Painter"
+                     data-location="Bengaluru">
+
+                    <h3>House Painter Required</h3>
+
+                    <p><strong>Skill:</strong> Painter</p>
+                    <p><strong>Location:</strong> Bengaluru</p>
+                    <p><strong>Payment:</strong> ₹800 per day</p>
+                    <p><strong>Contact:</strong> 9876543210</p>
+
+                </div>
+
+
+                <div class="job"
+                     data-skill="Plumber"
+                     data-location="Bengaluru">
+
+                    <h3>Plumber Needed</h3>
+
+                    <p><strong>Skill:</strong> Plumber</p>
+                    <p><strong>Location:</strong> Bengaluru</p>
+                    <p><strong>Payment:</strong> ₹1000 per day</p>
+                    <p><strong>Contact:</strong> 9876501234</p>
+
+                </div>
+
+
+                <div class="job"
+                     data-skill="Construction Worker"
+                     data-location="Mysuru">
+
+                    <h3>Construction Workers Required</h3>
+
+                    <p><strong>Skill:</strong> Construction Worker</p>
+                    <p><strong>Location:</strong> Mysuru</p>
+                    <p><strong>Payment:</strong> ₹900 per day</p>
+                    <p><strong>Contact:</strong> 9876512345</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Post Job -->
+        <section class="card" id="post">
+
+            <h2>Post a Local Job</h2>
+
+            <form id="jobForm">
+
+                <label for="jobTitle">Job Title</label>
+
+                <input type="text"
+                       id="jobTitle"
+                       placeholder="Example: Need a Painter">
+
+
+                <label for="jobSkill">Required Skill</label>
+
+                <select id="jobSkill">
+
+                    <option value="">-- Select Skill --</option>
+                    <option value="Construction Worker">Construction Worker</option>
+                    <option value="Painter">Painter</option>
+                    <option value="Plumber">Plumber</option>
+                    <option value="Electrician">Electrician</option>
+                    <option value="Carpenter">Carpenter</option>
+                    <option value="Driver">Driver</option>
+                    <option value="Cleaner">Cleaner</option>
+                    <option value="Gardener">Gardener</option>
+                    <option value="Cook">Cook</option>
+                    <option value="Security Guard">Security Guard</option>
+
+                </select>
+
+
+                <label for="jobLocation">Job Location</label>
+
+                <input type="text"
+                       id="jobLocation"
+                       placeholder="Enter job location">
+
+
+                <label for="payment">Daily Payment</label>
+
+                <input type="number"
+                       id="payment"
+                       placeholder="Example: 800">
+
+
+                <label for="employerPhone">Contact Number</label>
+
+                <input type="tel"
+                       id="employerPhone"
+                       placeholder="Enter contact number">
+
+
+                <label for="description">Job Description</label>
+
+                <textarea id="description"
+                          placeholder="Describe the job..."></textarea>
+
+
+                <button type="submit">
+                    Post Job
+                </button>
+
+                <p id="jobMessage"></p>
+
+            </form>
+
+        </section>
+
+
+        <!-- About -->
+        <section class="card" id="about">
+
+            <h2>About</h2>
+
+            <p>
+                This website connects local daily-wage workers
+                with nearby job opportunities.
+            </p>
+
+            <p>
+                Workers can register their skills, search for jobs,
+                and employers can post local jobs.
+            </p>
+
+            <p>
+                The main aim is to make local job searching easier,
+                faster, and more accessible.
+            </p>
+
+        </section>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Local Job & Skill Matching Portal</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

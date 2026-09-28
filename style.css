@@ -1,0 +1,262 @@
+/* ================================
+   LOCAL JOB & SKILL PORTAL
+   Modern Professional Design
+   100% Free - No External Library
+================================ */
+
+/* ---------- Basic ---------- */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f8fc;
+    color: #172b4d;
+}
+
+/* ---------- Navbar ---------- */
+nav {
+    background: #173b63;
+    padding: 16px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 8px 4px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #66b3ff;
+    border-bottom: 3px solid #66b3ff;
+}
+
+/* ---------- Header / Home ---------- */
+header {
+    min-height: 430px;
+    padding: 75px 8%;
+    background: linear-gradient(135deg, #e9f6ff, #d8efff);
+    position: relative;
+    overflow: hidden;
+}
+
+header h1 {
+    max-width: 650px;
+    font-size: 52px;
+    line-height: 1.1;
+    margin: 30px 0 20px;
+    color: #12365d;
+}
+
+header p {
+    max-width: 600px;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #526b85;
+}
+
+/* Decorative circles */
+header::after {
+    content: "👷  👩‍🔧  👨‍🔧";
+    position: absolute;
+    right: 7%;
+    bottom: 45px;
+    font-size: 75px;
+    letter-spacing: 15px;
+}
+
+/* ---------- Sections ---------- */
+section {
+    scroll-margin-top: 80px;
+}
+
+.card {
+    width: 90%;
+    max-width: 1100px;
+    margin: 35px auto;
+    padding: 35px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 5px 22px rgba(30, 70, 110, 0.10);
+}
+
+.card h2 {
+    font-size: 30px;
+    color: #173b63;
+    margin-top: 0;
+}
+
+/* ---------- Forms ---------- */
+form {
+    display: grid;
+    gap: 12px;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 8px;
+    color: #304b68;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #d4e0eb;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+    background: #fbfdff;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #1976d2;
+    box-shadow: 0 0 0 3px rgba(25,118,210,0.10);
+}
+
+textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+/* ---------- Buttons ---------- */
+button {
+    border: none;
+    border-radius: 10px;
+    padding: 13px 22px;
+    background: #1976d2;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+button:hover {
+    background: #125ca5;
+    transform: translateY(-2px);
+}
+
+/* ---------- Job Cards ---------- */
+.job-card {
+    background: white;
+    border: 1px solid #e1eaf2;
+    border-radius: 16px;
+    padding: 22px;
+    margin: 18px 0;
+    box-shadow: 0 4px 15px rgba(30,70,110,0.08);
+    transition: 0.25s;
+}
+
+.job-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(30,70,110,0.15);
+}
+
+.job-card h3 {
+    color: #173b63;
+    font-size: 21px;
+    margin-top: 0;
+}
+
+.job-card p {
+    color: #60758c;
+    line-height: 1.5;
+}
+
+.job-card button {
+    margin-top: 8px;
+}
+
+/* ---------- Search Area ---------- */
+#search input {
+    margin-bottom: 10px;
+}
+
+#search button {
+    margin-bottom: 15px;
+}
+
+/* ---------- Messages ---------- */
+#workerMessage,
+#jobMessage {
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+/* ---------- About ---------- */
+#about {
+    text-align: center;
+    background: linear-gradient(135deg, #ffffff, #eef7ff);
+}
+
+#about p {
+    max-width: 800px;
+    margin: auto;
+    color: #5b7087;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* ---------- Responsive Mobile ---------- */
+@media (max-width: 700px) {
+
+    nav {
+        padding: 12px 10px;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    header {
+        padding: 50px 7%;
+        min-height: 400px;
+    }
+
+    header h1 {
+        font-size: 36px;
+    }
+
+    header p {
+        font-size: 17px;
+    }
+
+    header::after {
+        position: static;
+        display: block;
+        margin-top: 30px;
+        font-size: 45px;
+    }
+
+    .card {
+        width: 94%;
+        padding: 22px;
+    }
+
+    .card h2 {
+        font-size: 25px;
+    }
+}
